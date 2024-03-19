@@ -1,9 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #ffc425;
+    margin: 0;
 }
-
-/* Existing CSS... */
 
 .navbar {
     background-color: #00583d;
@@ -25,6 +24,62 @@ body {
 
 .nav-item:hover {
     text-decoration: underline;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffc425;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #00583d;
+}
+
+.photo-grid {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Ensure the images can wrap to the next line on smaller screens */
+}
+
+.photo-grid img {
+    width: calc(33.333% - 10px); /* Original width setting for three images per row */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    max-width: 200px; /* Prevent images from becoming too large */
+    cursor: pointer;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05); /* Added hover effect */
+}
+
+@media (max-width: 600px) {
+    .photo-grid img {
+        width: calc(50% - 10px); /* Two images per row on smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .photo-grid img {
+        width: 100%; /* One image per row on very small screens */
+        margin-bottom: 10px;
+    }
+}
+
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #00583d;
+    color: white;
+    margin-top: 20px;
 }
 
 /* Popup Styles */
