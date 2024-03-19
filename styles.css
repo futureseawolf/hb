@@ -49,11 +49,11 @@ h1 {
 }
 
 .photo-grid img {
-    width: calc(33.333% - 10px); /* Original width setting for three images per row */
-    height: auto; /* Maintain the aspect ratio */
+    max-width: 200px; /* Limit the maximum width of images */
+    width: 100%; /* Ensure images scale down to fit their containers */
+    height: auto; /* Maintain aspect ratio */
     border-radius: 5px;
     transition: transform 0.3s ease;
-    max-width: 200px; /* Prevent images from becoming too large */
     cursor: pointer;
 }
 
@@ -61,16 +61,15 @@ h1 {
     transform: scale(1.05); /* Added hover effect */
 }
 
-@media (max-width: 600px) {
+@media (min-width: 600px) {
     .photo-grid img {
-        width: calc(50% - 10px); /* Two images per row on smaller screens */
+        width: calc(50% - 10px); /* Two images per row on larger screens */
     }
 }
 
-@media (max-width: 400px) {
+@media (min-width: 800px) {
     .photo-grid img {
-        width: 100%; /* One image per row on very small screens */
-        margin-bottom: 10px;
+        width: calc(33.333% - 10px); /* Three images per row on even larger screens */
     }
 }
 
@@ -93,7 +92,6 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    visibility: hidden; /* initially hidden */
 }
 
 .popup-content {
@@ -102,10 +100,13 @@ h1 {
     border-radius: 10px;
     text-align: center;
     color: #00583d;
+    position: relative;
 }
 
 .close-popup {
-    float: right;
+    position: absolute;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
 }
 
