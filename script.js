@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Display the popup overlay after a specific time
     setTimeout(function () {
         document.querySelector('.popup-overlay').style.display = 'flex';
-    }, 1000); // Show popup after 1 second
+    }, 5000); // Show popup after 1 second
 
     // Close popup and check if a button was clicked
     document.querySelector('.close-popup').addEventListener('click', function () {
