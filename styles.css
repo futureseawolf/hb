@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #ffc425;
 }
 
 .container {
@@ -15,11 +15,6 @@ body {
 
 h1 {
     color: #00583d;
-}
-
-p {
-    color: #333;
-    line-height: 1.5;
 }
 
 .photo-grid {
