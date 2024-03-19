@@ -124,12 +124,15 @@ h1 {
     margin: 0 10px;
     border: none;
     border-radius: 5px;
-    background-color: ##ffffff;
-    color: #00583d;
+    background-color: #ffffff; /* Sets the button background to white */
+    color: #00583d; /* Dark green text for contrast */
     text-decoration: none;
     cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
 .popup-button:hover {
-    background-color: #e7e7e7;
+    background-color: #f2f2f2; /* Light grey on hover to indicate interactivity */
+    color: #00583d; /* Keeps the text color consistent */
 }
+
