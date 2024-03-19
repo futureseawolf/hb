@@ -124,12 +124,12 @@ h1 {
     margin: 0 10px;
     border: none;
     border-radius: 5px;
-    background-color: ##ffc425;
+    background-color: ##ffffff;
     color: #00583d;
     text-decoration: none;
     cursor: pointer;
 }
 
 .popup-button:hover {
-    background-color: #00583d;
+    background-color: #e7e7e7;
 }
