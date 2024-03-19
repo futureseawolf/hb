@@ -122,17 +122,16 @@ h1 {
     display: inline-block;
     padding: 10px 20px;
     margin: 0 10px;
-    border: none;
+    border: 2px solid #4ea685; /* Adds a border to highlight the button */
     border-radius: 5px;
-    background-color: #ffffff; /* Sets the button background to white */
-    color: #00583d; /* Dark green text for contrast */
+    background-color: #ffffff; /* Ensures the button is white */
+    color: #00583d; /* Text color for contrast against the white background */
     text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
 }
 
 .popup-button:hover {
-    background-color: #f2f2f2; /* Light grey on hover to indicate interactivity */
-    color: #00583d; /* Keeps the text color consistent */
+    background-color: #4ea685; /* Button background color on hover */
+    color: #ffffff; /* Button text color on hover */
 }
-
