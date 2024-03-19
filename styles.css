@@ -1,3 +1,5 @@
+/* Existing styles... */
+
 .popup-overlay {
     position: fixed;
     top: 0;
@@ -8,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000; /* Ensure the overlay is above other content */
+    z-index: 1000; /* Ensures it's above all other content */
 }
 
 .popup-content {
@@ -17,9 +19,9 @@
     border-radius: 10px;
     text-align: center;
     color: #00583d;
-    position: relative; /* Allows for positioning of close button */
     width: auto;
-    max-width: 90%; /* Ensures content is responsive and fits within the viewport */
+    max-width: 600px; /* Adjust to your preference */
+    position: relative;
 }
 
 .close-popup {
@@ -27,7 +29,12 @@
     top: 10px;
     right: 10px;
     cursor: pointer;
-    font-size: 1.5rem; /* Makes the close button more prominent */
-    color: #333; /* Ensures visibility against the popup background */
+    font-size: 24px; /* Adjust size as needed */
+    color: #000; /* Adjust color as needed */
 }
 
+.popup-button {
+    /* Existing button styles... */
+}
+
+/* Ensure the rest of your CSS is unchanged */
