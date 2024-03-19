@@ -1,22 +1,42 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const photoGrid = document.querySelector('.photo-grid');
-    const images = Array.from(photoGrid.querySelectorAll('img'));
+    let clickCount = 0;
 
-    images.forEach(img => {
+    document.querySelectorAll('.photo-grid img').forEach(img => {
         img.addEventListener('click', function () {
-            shuffleImages(images);
+            clickCount++;
+            if (clickCount >= 5) {
+                showPopup();
+                clickCount = 0;
+            } else {
+                shuffleImages();
+            }
         });
     });
 
-    function shuffleImages(images) {
+    function shuffleImages() {
+        const images = document.querySelectorAll('.photo-grid img');
         for (let i = images.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [images[i], images[j]] = [images[j], images[i]];
+            [images[i].src, images[j].src] = [images[j].src, images[i].src]; // ES6 destructuring assignment
         }
-        images.forEach((img, index) => {
-            setTimeout(() => {
-                photoGrid.appendChild(img);
-            }, index * 100);
-        });
+    }
+
+    function showPopup() {
+        const popupHTML = `
+            <div class="popup" onclick="this.style.visibility = 'hidden';">
+                <div class="popup-content">
+                    <span class="close-popup" onclick="event.stopPropagation(); this.parentElement.parentElement.style.visibility = 'hidden';">&times;</span>
+                    <p>To all our readers in the U.S.,</p>
+                    <p> Please don’t scroll past this. Today, for the 1st time recently, we interrupt your reading to humbly ask you to support Sparky’s independence. Only 2% of our readers give. Many think they’ll give later, but then forget. If you donate just $2, or whatever you can, Baby Spirit could keep thriving for years. We don't run ads, and we never have. We rely on our fans for support. We serve millions of people, but we run on a fraction of what other top sites spend. Baby Spirit is special. It is like a library or a public park where we can all go to learn. We ask you, humbly: please don’t scroll away. If Baby Spirit has given you $2 worth of knowledge this year, take a minute to donate. Show the world that access to Baby Spirit matters to you. Thank you. </p>
+                    <div>
+                        <a href="https://engage.alaska.edu/uaa/give-now" class="popup-button">$2</a>
+                        <a href="https://engage.alaska.edu/uaa/give-now" class="popup-button">$50</a>
+                        <a href="https://engage.alaska.edu/uaa/give-now" class="popup-button">$my 401(b) funds</a>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', popupHTML);
+        document.querySelector('.popup').style.visibility = 'visible';
     }
 });
