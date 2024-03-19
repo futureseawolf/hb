@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         `;
         document.body.insertAdjacentHTML('beforeend', popupHTML);
-        document.querySelector('.popup-overlay').style.visibility = 'visible';
 
         // Prevent the popup from closing when clicking on its content
         document.querySelector('.popup-content').addEventListener('click', function (e) {
