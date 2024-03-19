@@ -22,38 +22,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function showPopup() {
-        const popupHTML = `
-            <div class="popup-overlay">
-                <div class="popup-content">
-                    <span class="close-popup">&times;</span>
-                    <p>To all our readers in the U.S.,</p>
-                    <p>Please don’t scroll past this...</p>
-                    <div>
-                        <a href="https://engage.alaska.edu/uaa/give-now" class="popup-button">$2</a>
-                        <a href="https://engage.alaska.edu/uaa/give-now" class="popup-button">$50</a>
-                        <a href="https://engage.alaska.edu/uaa/give-now" class="popup-button">$my 401(b) funds</a>
-                    </div>
-                </div>
-            </div>
-        `;
-        document.body.insertAdjacentHTML('beforeend', popupHTML);
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-
-        // Close the popup and re-enable scrolling
-        document.querySelector('.close-popup').addEventListener('click', function () {
-            document.querySelector('.popup-overlay').remove();
-            document.body.style.overflow = '';
-        });
-
-        // Prevent the popup from closing when clicking inside it
-        document.querySelector('.popup-content').addEventListener('click', function (e) {
-            e.stopPropagation();
-        });
-
-        // Optionally, close the popup when clicking outside of it
-        document.querySelector('.popup-overlay').addEventListener('click', function () {
-            this.remove();
-            document.body.style.overflow = '';
-        });
+        document.querySelector('.popup-overlay').style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
     }
+
+    document.querySelector('.close-popup').addEventListener('click', function () {
+        document.querySelector('.popup-overlay').style.display = 'none';
+        document.body.style.overflow = ''; // Re-enable scrolling
+    });
 });
