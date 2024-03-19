@@ -28,12 +28,14 @@ h1 {
     width: calc(33.333% - 10px);
     height: auto;
     border-radius: 5px;
+    transition: transform 0.3s ease; /* Added transition for hover effect */
 }
+
 .photo-grid img:hover {
-    transform: scale(1.05); /* Slightly enlarges images on hover */
-    cursor: pointer; /* Changes the cursor to indicate clickable (if they are links) */
-    transition: transform 0.3s ease; /* Smooth transition for the transform */
+    transform: scale(1.05); /* Added hover effect */
+    cursor: pointer; /* Added cursor style change on hover */
 }
+
 @media (max-width: 600px) {
     .photo-grid img {
         width: calc(50% - 10px); /* Adjusts to show 2 images per row on smaller screens */
@@ -46,27 +48,13 @@ h1 {
         margin-bottom: 10px; /* Adds space between images when stacked */
     }
 }
+
 .site-footer {
     text-align: center;
     padding: 20px;
     background-color: #00583d;
     color: white;
     margin-top: 20px;
-}
-.site-nav {
-    background-color: #00583d;
-    padding: 10px;
-    text-align: center;
-}
-
-.site-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-}
-
-.site-nav a:hover {
-    text-decoration: underline;
 }
 
 
